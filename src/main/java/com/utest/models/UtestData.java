@@ -5,7 +5,9 @@ public class UtestData {
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String city;
 	private String postalCode;
+	private String srcPais;
 	private String password;
 	private String confPassword;
 	private String strTitle;
@@ -29,11 +31,27 @@ public class UtestData {
 		this.email = email;
 	}
 	
+	public String getCity() {
+		return city;
+	}
+	
+	public void setCityS(String city) {
+		this.city= city;
+	}
+	
 	public String getPostalCode() {
 		return postalCode;
 	}
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+	}
+
+	public String getSrcPais() {
+		return srcPais;
+	}
+
+	public void setSrcPais(String srcPais) {
+		this.srcPais = srcPais;
 	}
 	public String getPassword() {
 		return password;

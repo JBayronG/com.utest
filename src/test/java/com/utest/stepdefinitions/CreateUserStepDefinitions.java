@@ -31,7 +31,7 @@ public class CreateUserStepDefinitions {
 	@When("^el Enter all the information they ask me in the form$")
 	public void elEnterAllTheInformationTheyAskMeInTheForm(List<UtestData> utestData) {
 		OnStage.theActorInTheSpotlight().attemptsTo(Register.the(utestData.get(0).getFirtsName(),
-				utestData.get(0).getLastName(),utestData.get(0).getEmail(),utestData.get(0).getPostalCode(),
+				utestData.get(0).getLastName(),utestData.get(0).getEmail(),utestData.get(0).getCity(), utestData.get(0).getPostalCode(),
 				utestData.get(0).getPassword(), utestData.get(0).getConfPassword()));
 		
 	}

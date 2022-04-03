@@ -8,29 +8,33 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Hit;
+import org.openqa.selenium.Keys;
 
 public class Register implements Task {
 	
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String city;
 	private String postalCode;
 	private String password;
 	private String confPassword;
 	
-	public Register (String firstName, String lastName, String email, String postalCode, String password, String confPassword) {
+	public Register (String firstName, String lastName, String email, String city, String postalCode, String password, String confPassword) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		this.city  = city;
 		this.postalCode = postalCode;
 		this.password = password;
 		this.confPassword = confPassword;
 	}
 	
 	
-	public static Register the(String firstName, String lastName, String email, String postalCode, String password, String confPassword) {
+	public static Register the(String firstName, String lastName, String email, String city, String postalCode, String password, String confPassword) {
 
-		return Tasks.instrumented(Register.class,firstName,lastName,email,postalCode,password,confPassword);
+		return Tasks.instrumented(Register.class,firstName,lastName,email,city,postalCode,password,confPassword);
 	}
 
 	@Override
@@ -45,7 +49,10 @@ public class Register implements Task {
 				Click.on(RegisterPage.DATA_OF_BIRTH1),
 				Click.on(RegisterPage.DATA_OF_BIRTH2),
 				Click.on(RegisterPage.NEXT_LOCATION),
+				//Enter.theValue(city).into(RegisterPage.INPUT_CITY),
 				Enter.theValue(postalCode).into(RegisterPage.INPUT_POSTAL_CODE),
+				Click.on(RegisterPage.SPAN_COUNTRY),
+				Click.on(RegisterPage.SPAN_COUNTRY1),
 				Click.on(RegisterPage.NEXT_DEVICES),
 				Click.on(RegisterPage.YOUR_MOBILE),
 				Click.on(RegisterPage.YOUR_MOBILE_DIVICE),
